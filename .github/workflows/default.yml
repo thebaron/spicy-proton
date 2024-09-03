@@ -31,6 +31,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-go-
 
+      - name: Install dependencies
+        run: go mod tidy
+
       - name: Build binary
         run: go build -o spicy-proton
 
